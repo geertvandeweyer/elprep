@@ -125,7 +125,7 @@ func SplitFilePerChromosome(input, outputPath, outputPrefix, outputExtension, fa
 	if err = os.MkdirAll(splitsPath, 0700); err != nil {
 		return err
 	}
-	header.AddUserRecord("@sr", utils.StringMap{"co": "This file was created using elprep split."})
+	header.AddUserRecord("@CO", utils.StringMap{"co": "This file was created using elprep split."})
 	out, err := Create(filepath.Join(splitsPath, outputPrefix+"-unmapped."+outputExtension), fai, fasta)
 	if err != nil {
 		return err
